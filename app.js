@@ -13,7 +13,21 @@ app.use(bodyParser.urlencoded({
 app.set("view engine", "ejs");
 
 app.get("/", function (req, res) {
-    res.render("index");
+    res.render("index", {
+        title: indexHome
+    });
+});
+
+app.get("/about", function (req, res) {
+    res.render("about", {
+        title: aboutHome
+    });
+});
+
+app.get("/contact", function (req, res) {
+    res.render("contact", {
+        title: contactHome
+    });
 });
 
 app.listen(3000, () => console.log("port 3000"));
